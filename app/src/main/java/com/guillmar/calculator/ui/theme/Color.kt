@@ -2,10 +2,14 @@ package com.guillmar.calculator.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-val Purple80 = Color(0xFFD0BCFF)
-val PurpleGrey80 = Color(0xFFCCC2DC)
-val Pink80 = Color(0xFFEFB8C8)
+val Taupe = Color(0xFF484341)
+val Dark_Teal = Color(0xFF155369)
+val Jet_Black = Color(0xFF1E3242)
+val Lilac_Ash = Color(0xFF9F979F)
+val Wisteria_Blue = Color(0xFF7C9DFF)
 
-val Purple40 = Color(0xFF6650a4)
-val PurpleGrey40 = Color(0xFF625b71)
-val Pink40 = Color(0xFF7D5260)
+val Alabaster_Grey = Color(0xFFDCD9DC)
+val Rosy_Granite = Color(0xFF8B817E)
+val Turquoise_Surf = Color(0xFF2AA7D4)
+val Rich_Curelean = Color(0xFF45749A)
+val White = Color(0xFFFBFCFF)

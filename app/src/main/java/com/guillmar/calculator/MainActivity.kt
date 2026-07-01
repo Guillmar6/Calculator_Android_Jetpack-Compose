@@ -2,7 +2,6 @@ package com.guillmar.calculator
 
 import android.content.Context
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
@@ -23,17 +22,14 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.MutableState
-import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.em
 import androidx.compose.ui.unit.sp
 import com.guillmar.calculator.ui.theme.CalculatorTheme
 
@@ -43,7 +39,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             val myContext = LocalContext.current
             val displayScrollState = rememberScrollState()
-            var displayNums: MutableState<String> = remember { mutableStateOf("0") }
+            val displayNums: MutableState<String> = remember { mutableStateOf("0") }
 
             LaunchedEffect(displayNums.value) {
                 displayScrollState.animateScrollTo(displayScrollState.maxValue)
@@ -63,12 +59,12 @@ class MainActivity : ComponentActivity() {
                     ) {
                         Text(
                             displayNums.value,
-                            color = MaterialTheme.colorScheme.secondary,
+                            color = MaterialTheme.colorScheme.onBackground,
                             fontSize = 100.sp,
                             textAlign = TextAlign.End,
                             maxLines = 1,
                             modifier = Modifier
-                                .background(Color.Blue)
+                                .background(MaterialTheme.colorScheme.background)
                                 .fillMaxWidth()
                                 .weight(1f)
                                 .horizontalScroll(displayScrollState)
@@ -89,7 +85,7 @@ fun BtnNumbers(myContext: Context, dis: MutableState<String>) {
     Column(
         modifier = Modifier
             .aspectRatio(1f / 1.25f)
-            .background(Color.Cyan)
+            .background(MaterialTheme.colorScheme.tertiary)
     ) {
         Spacer(
             modifier = Modifier
@@ -431,12 +427,12 @@ fun onClickBtnNumbers(myContext: Context, num: String, dis: MutableState<String>
     dis.value += num
 }
 fun onClickBtnType(myContext: Context, type: Char, dis: MutableState<String>) {
-    when {
-        type == 'C' -> {dis.value = "0"}
-        type == '=' -> {}
-        type == '+' -> {}
-        type == '-' -> {}
-        type == '/' -> {}
-        type == 'x' -> {}
+    when (type) {
+        'C' -> {dis.value = "0"}
+        '=' -> {}
+        '+' -> {}
+        '-' -> {}
+        '/' -> {}
+        'x' -> {}
     }
 }
