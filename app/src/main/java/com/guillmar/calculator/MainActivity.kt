@@ -26,7 +26,6 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -98,7 +97,7 @@ fun BtnNumbers(myContext: Context, dis: MutableState<String>) {
             )
             Button(
                 onClick = {
-                    onClickBtnType(myContext, 'C', dis)
+                    onClickBtnType(myContext, "C", dis)
                 },
                 modifier = Modifier
                     .weight(modifierWeight)
@@ -115,7 +114,7 @@ fun BtnNumbers(myContext: Context, dis: MutableState<String>) {
             )
             Button(
                 onClick = {
-                    onClickBtnType(myContext, 'n', dis)
+                    onClickBtnType(myContext, "n", dis)
                 },
                 modifier = Modifier
                     .weight(modifierWeight)
@@ -132,7 +131,7 @@ fun BtnNumbers(myContext: Context, dis: MutableState<String>) {
             )
             Button(
                 onClick = {
-                    onClickBtnType(myContext, '%', dis)
+                    onClickBtnType(myContext, "%", dis)
                 },
                 modifier = Modifier
                     .weight(modifierWeight)
@@ -149,7 +148,7 @@ fun BtnNumbers(myContext: Context, dis: MutableState<String>) {
             )
             Button(
                 onClick = {
-                    onClickBtnType(myContext, '/', dis)
+                    onClickBtnType(myContext, "/", dis)
                 },
                 modifier = Modifier
                     .weight(modifierWeight)
@@ -216,7 +215,7 @@ fun BtnNumbers(myContext: Context, dis: MutableState<String>) {
                     .width(10.dp)
             )
             Button(
-                onClick = { onClickBtnType(myContext, 'x', dis) },
+                onClick = { onClickBtnType(myContext, "x", dis) },
                 modifier = Modifier
                     .weight(modifierWeight)
                     .aspectRatio(modifierAspectRatio)
@@ -280,7 +279,7 @@ fun BtnNumbers(myContext: Context, dis: MutableState<String>) {
                     .width(10.dp)
             )
             Button(
-                onClick = { onClickBtnType(myContext, '-', dis) },
+                onClick = { onClickBtnType(myContext, "-", dis) },
                 modifier = Modifier
                     .weight(modifierWeight)
                     .aspectRatio(modifierAspectRatio)
@@ -344,7 +343,7 @@ fun BtnNumbers(myContext: Context, dis: MutableState<String>) {
                     .width(10.dp)
             )
             Button(
-                onClick = { onClickBtnType(myContext, '+', dis) },
+                onClick = { onClickBtnType(myContext, "+", dis) },
                 modifier = Modifier
                     .weight(modifierWeight)
                     .aspectRatio(modifierAspectRatio)
@@ -395,7 +394,7 @@ fun BtnNumbers(myContext: Context, dis: MutableState<String>) {
                     .width(10.dp)
             )
             Button(
-                onClick = { onClickBtnType(myContext, '=', dis) },
+                onClick = { onClickBtnType(myContext, "=", dis) },
                 modifier = Modifier
                     .weight(modifierWeight)
                     .aspectRatio(modifierAspectRatio)
@@ -414,25 +413,5 @@ fun BtnNumbers(myContext: Context, dis: MutableState<String>) {
             modifier = Modifier
                 .height(10.dp)
         )
-    }
-}
-
-fun onClickBtnNumbers(myContext: Context, num: String, dis: MutableState<String>) {
-    if(dis.value == "0") {
-        if(num == ".") return
-        if(num != "0") dis.value = num
-        return
-    }
-    if(num == "." && dis.value.contains(".")) return
-    dis.value += num
-}
-fun onClickBtnType(myContext: Context, type: Char, dis: MutableState<String>) {
-    when (type) {
-        'C' -> {dis.value = "0"}
-        '=' -> {}
-        '+' -> {}
-        '-' -> {}
-        '/' -> {}
-        'x' -> {}
     }
 }
