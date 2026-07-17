@@ -215,7 +215,7 @@ fun BtnNumbers(myContext: Context, dis: MutableState<String>) {
                     .width(10.dp)
             )
             Button(
-                onClick = { onClickBtnType(myContext, "x", dis) },
+                onClick = { onClickBtnType(myContext, "*", dis) },
                 modifier = Modifier
                     .weight(modifierWeight)
                     .aspectRatio(modifierAspectRatio)

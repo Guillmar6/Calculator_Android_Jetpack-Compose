@@ -22,6 +22,7 @@ fun onClickBtnType(myContext: Context, type: String, dis: MutableState<String>) 
             return
         }
         "=" -> {
+            dis.value = CalculateString(dis.value, myContext).toString()
             return
         }
         "+" -> {}
